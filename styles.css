@@ -5,21 +5,21 @@
 
 /* CSS Variables */
 :root {
-    /* Thailand Tourism Colors */
-    --primary: #0891b2;        /* Turquoise - Thai seas */
-    --primary-dark: #0e7490;
-    --primary-light: #22d3ee;
+    /* Modern Masculine Colors */
+    --primary: #0f766e;        /* Deep Teal */
+    --primary-dark: #115e59;
+    --primary-light: #14b8a6;
     --secondary: #f59e0b;      /* Golden - Thai temples */
     --secondary-dark: #d97706;
     --secondary-light: #fbbf24;
-    --accent: #ec4899;         /* Pink - Thai orchids */
-    --accent-light: #f472b6;
+    --accent: #3b82f6;         /* Strong Blue */
+    --accent-light: #60a5fa;
     
     /* Nature Colors */
-    --forest: #059669;         /* Thai jungle green */
+    --forest: #166534;         /* Deep forest green */
     --sand: #fef3c7;           /* Beach sand */
-    --ocean: #0ea5e9;          /* Ocean blue */
-    --sunset: #f97316;         /* Thai sunset */
+    --ocean: #0369a1;          /* Deep ocean blue */
+    --sunset: #ea580c;         /* Bold sunset */
     
     /* Neutrals */
     --white: #ffffff;
@@ -35,11 +35,11 @@
     --gray-900: #111827;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #0891b2 0%, #22d3ee 100%);
+    --gradient-primary: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
     --gradient-secondary: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-    --gradient-sunset: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%);
-    --gradient-ocean: linear-gradient(180deg, #0ea5e9 0%, #0891b2 50%, #0e7490 100%);
-    --gradient-hero: linear-gradient(135deg, rgba(8, 145, 178, 0.9) 0%, rgba(236, 72, 153, 0.8) 50%, rgba(245, 158, 11, 0.9) 100%);
+    --gradient-sunset: linear-gradient(135deg, #0f766e 0%, #0369a1 50%, #1e40af 100%);
+    --gradient-ocean: linear-gradient(180deg, #0369a1 0%, #0f766e 50%, #115e59 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(15, 118, 110, 0.9) 0%, rgba(3, 105, 161, 0.85) 50%, rgba(30, 64, 175, 0.9) 100%);
     
     /* Typography */
     --font-primary: 'Poppins', sans-serif;
@@ -1036,9 +1036,20 @@ ul {
 }
 
 .language-card .flag {
-    font-size: 3rem;
+    font-size: 3.5rem;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", sans-serif;
+    line-height: 1;
+}
+
+.language-card .flag-img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .language-card h4 {
