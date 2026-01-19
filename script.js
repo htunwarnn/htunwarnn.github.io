@@ -339,6 +339,70 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ✨ Thai Cute Sparkle Trail Effect on Mouse Move
+    let sparkleTimeout;
+    document.addEventListener('mousemove', (e) => {
+        if (sparkleTimeout) return;
+        sparkleTimeout = setTimeout(() => {
+            sparkleTimeout = null;
+        }, 50);
+
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle-trail';
+        sparkle.innerHTML = ['✨', '💖', '🌸', '⭐', '🪷'][Math.floor(Math.random() * 5)];
+        sparkle.style.left = e.pageX + 'px';
+        sparkle.style.top = e.pageY + 'px';
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+            sparkle.remove();
+        }, 1000);
+    });
+
+    // 🎀 Add bounce effect on hover for interactive elements
+    const bounceElements = document.querySelectorAll('.info-card, .skill-item, .gallery-card, .language-card, .contact-card, .social-icon');
+    bounceElements.forEach(el => {
+        el.addEventListener('mouseenter', function() {
+            this.style.animation = 'none';
+            this.offsetHeight; // Trigger reflow
+            this.style.animation = '';
+        });
+    });
+
+    // 💝 Random floating hearts
+    function createFloatingHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart-anim';
+        heart.innerHTML = ['💖', '💕', '💗', '🩷', '🤍'][Math.floor(Math.random() * 5)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+    }
+
+    // Create hearts occasionally
+    setInterval(createFloatingHeart, 3000);
+
+    // 🦋 Click effect - burst of emojis
+    document.addEventListener('click', (e) => {
+        const emojis = ['✨', '💖', '🌸', '⭐', '🪷', '🦋', '💕'];
+        for (let i = 0; i < 5; i++) {
+            const emoji = document.createElement('div');
+            emoji.className = 'click-burst';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = e.pageX + 'px';
+            emoji.style.top = e.pageY + 'px';
+            emoji.style.setProperty('--x', (Math.random() - 0.5) * 100 + 'px');
+            emoji.style.setProperty('--y', (Math.random() - 0.5) * 100 + 'px');
+            document.body.appendChild(emoji);
+            
+            setTimeout(() => emoji.remove(), 1000);
+        }
+    });
+
     // Intersection Observer for reveal animations
     const revealElements = document.querySelectorAll('.info-card, .skill-item, .gallery-item, .contact-card');
     
@@ -360,6 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
         revealObserver.observe(el);
     });
 
-    console.log('🌴 Welcome to Mr Warnn\'s Portfolio!');
+    console.log('🌴 สวัสดีครับ! Welcome to Mr Warnn\'s Portfolio!');
     console.log('🇹🇭 Tourism, Business & Events @ Mae Fah Luang University');
+    console.log('💖 Made with love in Chiang Rai, Thailand ✨');
 });

@@ -1,11 +1,11 @@
 /* ========================================
    MR WARNN - Tourism Portfolio
-   Thailand Tourism Theme
+   Thai Cute Theme with Bouncy Animations 🪷✨
    ======================================== */
 
 /* CSS Variables */
 :root {
-    /* Modern Masculine Colors */
+    /* Thai Cute Pastel Colors */
     --primary: #0f766e;        /* Deep Teal */
     --primary-dark: #115e59;
     --primary-light: #14b8a6;
@@ -14,6 +14,15 @@
     --secondary-light: #fbbf24;
     --accent: #3b82f6;         /* Strong Blue */
     --accent-light: #60a5fa;
+    
+    /* Thai Cute Vibes Colors */
+    --thai-pink: #ff9eb5;
+    --thai-mint: #7edcca;
+    --thai-lavender: #c4b5fd;
+    --thai-peach: #ffb07c;
+    --thai-gold: #ffd700;
+    --thai-rose: #fb7185;
+    --thai-sky: #7dd3fc;
     
     /* Nature Colors */
     --forest: #166534;         /* Deep forest green */
@@ -158,11 +167,36 @@ ul {
     }
 }
 
+.loader-hearts {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.loader-hearts span {
+    font-size: 1.5rem;
+    animation: heartBounce 1s ease-in-out infinite;
+}
+
+.loader-hearts span:nth-child(1) { animation-delay: 0s; }
+.loader-hearts span:nth-child(2) { animation-delay: 0.2s; }
+.loader-hearts span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes heartBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.2);
+    }
+}
+
 .loader p {
-    margin-top: 20px;
-    font-size: 1.2rem;
+    margin-top: 15px;
+    font-size: 1rem;
     font-weight: 300;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -172,7 +206,185 @@ ul {
 }
 
 /* ========================================
-   Floating Elements
+   Bouncy Thai Cute Animations
+   ======================================== */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rubberBand {
+    0% { transform: scale(1); }
+    30% { transform: scaleX(1.25) scaleY(0.75); }
+    40% { transform: scaleX(0.75) scaleY(1.25); }
+    50% { transform: scaleX(1.15) scaleY(0.85); }
+    65% { transform: scaleX(0.95) scaleY(1.05); }
+    75% { transform: scaleX(1.05) scaleY(0.95); }
+    100% { transform: scale(1); }
+}
+
+@keyframes jello {
+    0%, 100% { transform: translateX(0); }
+    22.2% { transform: skewX(-12.5deg) skewY(-12.5deg); }
+    33.3% { transform: skewX(6.25deg) skewY(6.25deg); }
+    44.4% { transform: skewX(-3.125deg) skewY(-3.125deg); }
+    55.5% { transform: skewX(1.5625deg) skewY(1.5625deg); }
+    66.6% { transform: skewX(-0.78125deg) skewY(-0.78125deg); }
+    77.7% { transform: skewX(0.390625deg) skewY(0.390625deg); }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.2); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.2); }
+    70% { transform: scale(1); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        opacity: 0.8;
+        transform: scale(0.8) rotate(90deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(180deg);
+    }
+    75% {
+        opacity: 0.8;
+        transform: scale(0.9) rotate(270deg);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes swing {
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes tada {
+    0% { transform: scale(1) rotate(0); }
+    10%, 20% { transform: scale(0.9) rotate(-3deg); }
+    30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+    40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.1) translateY(-5px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes floatBubble {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+    66% {
+        transform: translateY(5px) rotate(-5deg);
+    }
+}
+
+/* Thai Cute Sparkle Particles */
+.sparkle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.sparkle {
+    position: absolute;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Thai Cute Emoji Decorations */
+.thai-emoji-deco {
+    position: fixed;
+    font-size: 2rem;
+    opacity: 0.1;
+    pointer-events: none;
+    animation: floatBubble 6s ease-in-out infinite;
+}
+
+.thai-emoji-deco:nth-child(odd) {
+    animation-direction: reverse;
+}
+
+/* Cute Cursor Trail Effect */
+.cursor-trail {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--thai-pink), transparent);
+    pointer-events: none;
+    z-index: 10000;
+    animation: cursorFade 0.5s ease-out forwards;
+}
+
+@keyframes cursorFade {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+}
+
+/* ========================================
+   Floating Elements - Thai Cute Theme
    ======================================== */
 .floating-elements {
     position: fixed;
@@ -187,9 +399,25 @@ ul {
 
 .floating-item {
     position: absolute;
-    opacity: 0.15;
+    opacity: 0.2;
     font-size: 2.5rem;
-    animation: float 15s ease-in-out infinite;
+    animation: floatCute 8s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.5));
+}
+
+@keyframes floatCute {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translateY(-25px) rotate(10deg) scale(1.1);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-5deg) scale(0.95);
+    }
+    75% {
+        transform: translateY(-30px) rotate(5deg) scale(1.05);
+    }
 }
 
 .floating-item.lotus {
@@ -197,41 +425,264 @@ ul {
     left: 8%;
     animation-delay: 0s;
     font-size: 3rem;
+    animation-name: floatCuteLotus;
+}
+
+@keyframes floatCuteLotus {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.6));
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg) scale(1.15);
+        filter: drop-shadow(0 0 25px rgba(255, 105, 180, 0.8));
+    }
 }
 
 .floating-item.temple {
     top: 55%;
     right: 8%;
-    animation-delay: -5s;
+    animation-delay: -2s;
     font-size: 2.8rem;
 }
 
 .floating-item.elephant {
     top: 75%;
     left: 20%;
-    animation-delay: -3s;
+    animation-delay: -4s;
     font-size: 2.5rem;
+    animation-name: elephantBounce;
+}
+
+@keyframes elephantBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(0) rotate(5deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(0deg);
+    }
 }
 
 .floating-item.flower {
     top: 25%;
     right: 15%;
-    animation-delay: -8s;
+    animation-delay: -1s;
     font-size: 2rem;
+    animation-name: flowerSpin;
+}
+
+@keyframes flowerSpin {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(90deg) scale(1.2);
+    }
+    50% {
+        transform: rotate(180deg) scale(1);
+    }
+    75% {
+        transform: rotate(270deg) scale(1.1);
+    }
 }
 
 .floating-item.globe {
     bottom: 30%;
     right: 25%;
-    animation-delay: -12s;
+    animation-delay: -3s;
     font-size: 2.2rem;
 }
 
 .floating-item.star {
     top: 45%;
     left: 25%;
-    animation-delay: -6s;
+    animation-delay: -2s;
     font-size: 1.8rem;
+    animation-name: starTwinkle;
+}
+
+@keyframes starTwinkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.3) rotate(180deg);
+        opacity: 0.6;
+    }
+}
+
+/* Extra Thai Cute Floating Elements */
+.floating-item.heart {
+    top: 35%;
+    left: 12%;
+    font-size: 1.5rem;
+    animation: heartFloat 3s ease-in-out infinite;
+    opacity: 0.25;
+}
+
+@keyframes heartFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.2);
+    }
+}
+
+.floating-item.sparkle-star {
+    top: 65%;
+    right: 12%;
+    font-size: 1.8rem;
+    animation: sparkleFloat 2.5s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+        filter: brightness(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.3);
+        filter: brightness(1.5);
+    }
+}
+
+.floating-item.cloud {
+    top: 20%;
+    left: 60%;
+    font-size: 2rem;
+    animation: cloudFloat 10s linear infinite;
+    opacity: 0.15;
+}
+
+@keyframes cloudFloat {
+    0% {
+        transform: translateX(-100px);
+    }
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+/* More Cute Thai Floating Elements */
+.floating-item.butterfly {
+    top: 50%;
+    right: 20%;
+    font-size: 2rem;
+    animation: butterflyFloat 6s ease-in-out infinite;
+    opacity: 0.25;
+}
+
+@keyframes butterflyFloat {
+    0%, 100% {
+        transform: translate(0, 0) rotate(-5deg);
+    }
+    25% {
+        transform: translate(20px, -30px) rotate(5deg);
+    }
+    50% {
+        transform: translate(-10px, -15px) rotate(-5deg);
+    }
+    75% {
+        transform: translate(15px, -25px) rotate(5deg);
+    }
+}
+
+.floating-item.rainbow {
+    top: 10%;
+    right: 30%;
+    font-size: 2.5rem;
+    animation: rainbowGlow 4s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+@keyframes rainbowGlow {
+    0%, 100% {
+        transform: scale(1);
+        filter: brightness(1) saturate(1);
+    }
+    50% {
+        transform: scale(1.2);
+        filter: brightness(1.5) saturate(1.3);
+    }
+}
+
+.floating-item.palm {
+    bottom: 15%;
+    left: 5%;
+    font-size: 2.5rem;
+    animation: palmSway 5s ease-in-out infinite;
+    opacity: 0.15;
+}
+
+@keyframes palmSway {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Thai Cute Decorations */
+.thai-cute-decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.deco-bubble {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.15;
+    animation: decoBubble 8s ease-in-out infinite;
+}
+
+.deco-1 {
+    top: 30%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.deco-2 {
+    bottom: 20%;
+    right: 15%;
+    animation-delay: -2s;
+}
+
+.deco-3 {
+    top: 60%;
+    left: 3%;
+    animation-delay: -4s;
+}
+
+.deco-4 {
+    bottom: 35%;
+    left: 8%;
+    animation-delay: -6s;
+}
+
+@keyframes decoBubble {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.15;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.3);
+        opacity: 0.25;
+    }
 }
 
 @keyframes float {
@@ -336,12 +787,14 @@ ul {
     background: var(--white);
     color: var(--primary);
     box-shadow: var(--shadow-md);
+    animation: popIn 0.4s ease;
 }
 
 .navbar.scrolled .nav-link:hover,
 .navbar.scrolled .nav-link.active {
     background: var(--gradient-primary);
     color: var(--white);
+    animation: rubberBand 0.5s ease;
 }
 
 .nav-link i {
@@ -452,6 +905,28 @@ ul {
     font-weight: 700;
     color: var(--white);
     text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
+    animation: bounceInName 1s ease-out;
+}
+
+@keyframes bounceInName {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.8);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(10px) scale(1.05);
+    }
+    80% {
+        transform: translateY(-5px) scale(0.98);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero h1 .name:hover {
+    animation: jello 0.8s ease;
 }
 
 .hero-title {
@@ -528,8 +1003,18 @@ ul {
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.05);
     box-shadow: var(--shadow-xl), var(--shadow-glow);
+    animation: bounceBtn 0.5s ease;
+}
+
+@keyframes bounceBtn {
+    0%, 100% { transform: translateY(-5px) scale(1.05); }
+    50% { transform: translateY(-8px) scale(1.08); }
+}
+
+.btn-primary:active {
+    transform: translateY(-2px) scale(0.98);
 }
 
 .btn-secondary {
@@ -541,7 +1026,12 @@ ul {
 .btn-secondary:hover {
     background: var(--white);
     color: var(--primary);
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.05);
+    animation: bounceBtn 0.5s ease;
+}
+
+.btn-secondary:active {
+    transform: translateY(-2px) scale(0.98);
 }
 
 .hero-stats {
@@ -553,6 +1043,12 @@ ul {
 
 .stat-item {
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: scale(1.1);
+    animation: rubberBand 0.6s ease;
 }
 
 .stat-number {
@@ -562,6 +1058,7 @@ ul {
     font-weight: 700;
     color: var(--white);
     line-height: 1;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .stat-label {
@@ -711,7 +1208,20 @@ ul {
 }
 
 .image-frame:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08) rotate(2deg);
+}
+
+.image-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.image-frame:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .image-overlay {
@@ -824,12 +1334,25 @@ ul {
     background: var(--white);
     border-radius: 15px;
     box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
 }
 
 .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: var(--shadow-xl), 0 0 20px rgba(15, 118, 110, 0.2);
+    border-color: var(--thai-mint);
+    animation: cardBounce 0.5s ease;
+}
+
+@keyframes cardBounce {
+    0% { transform: translateY(-8px) scale(1.03); }
+    50% { transform: translateY(-12px) scale(1.05); }
+    100% { transform: translateY(-8px) scale(1.03); }
+}
+
+.info-card:hover i {
+    animation: tada 0.8s ease;
 }
 
 .info-card i {
@@ -1027,12 +1550,20 @@ ul {
     padding: 30px 50px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    transition: var(--transition-normal);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
 }
 
 .language-card:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-15px) scale(1.05);
+    border-color: var(--secondary-light);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.language-card:hover .flag-img {
+    animation: wiggle 0.5s ease;
+    transform: scale(1.1);
 }
 
 .language-card .flag {
@@ -1090,7 +1621,7 @@ ul {
     font-weight: 500;
     color: var(--gray-600);
     cursor: pointer;
-    transition: var(--transition-normal);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .filter-btn:hover,
@@ -1098,6 +1629,11 @@ ul {
     background: var(--gradient-primary);
     color: var(--white);
     box-shadow: var(--shadow-md);
+    transform: translateY(-3px) scale(1.05);
+}
+
+.filter-btn:active {
+    transform: translateY(-1px) scale(0.98);
 }
 
 .gallery-grid {
@@ -1125,17 +1661,23 @@ ul {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
 }
 
 .gallery-card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .gallery-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(2deg);
 }
 
 .gallery-overlay {
@@ -1187,13 +1729,14 @@ ul {
     color: var(--primary);
     font-size: 1rem;
     cursor: pointer;
-    transition: var(--transition-normal);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .view-btn:hover {
     background: var(--secondary);
     color: var(--white);
-    transform: rotate(90deg);
+    transform: rotate(90deg) scale(1.2);
+    animation: heartbeat 0.6s ease;
 }
 
 /* Lightbox */
@@ -1340,12 +1883,19 @@ ul {
     background: var(--white);
     border-radius: 15px;
     box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
 }
 
 .contact-card:hover {
-    transform: translateX(10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateX(15px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--thai-mint);
+}
+
+.contact-card:hover .card-icon {
+    animation: bounceIn 0.5s ease;
+    transform: scale(1.1);
 }
 
 .card-icon {
@@ -1394,12 +1944,13 @@ ul {
     border-radius: 50%;
     color: var(--gray-600);
     font-size: 1.2rem;
-    transition: var(--transition-normal);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .social-icon:hover {
     color: var(--white);
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.15) rotate(10deg);
+    animation: bounceIn 0.5s ease;
 }
 
 .social-icon.facebook:hover { background: #1877f2; }
@@ -1773,4 +2324,130 @@ ul {
     .contact-form-wrapper {
         padding: 25px;
     }
+}
+
+/* ========================================
+   Thai Cute Interactive Effects ✨
+   ======================================== */
+
+/* Sparkle trail effect */
+.sparkle-trail {
+    position: absolute;
+    font-size: 1.2rem;
+    pointer-events: none;
+    z-index: 10000;
+    animation: sparkleTrail 1s ease-out forwards;
+}
+
+@keyframes sparkleTrail {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translateY(-30px) rotate(180deg);
+    }
+}
+
+/* Floating hearts animation */
+.floating-heart-anim {
+    position: fixed;
+    bottom: -50px;
+    font-size: 1.5rem;
+    pointer-events: none;
+    z-index: 10000;
+    animation: floatHeartUp 7s ease-out forwards;
+    opacity: 0.6;
+}
+
+@keyframes floatHeartUp {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Click burst effect */
+.click-burst {
+    position: absolute;
+    font-size: 1.2rem;
+    pointer-events: none;
+    z-index: 10000;
+    animation: clickBurst 1s ease-out forwards;
+}
+
+@keyframes clickBurst {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Extra cute hover glow effect */
+.info-card:hover,
+.skill-item:hover,
+.gallery-card:hover,
+.language-card:hover,
+.contact-card:hover {
+    --glow-color: rgba(255, 158, 181, 0.4);
+}
+
+.info-card::after,
+.gallery-card::after,
+.language-card::after,
+.contact-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 0 30px var(--glow-color, rgba(255, 158, 181, 0.3));
+}
+
+.info-card:hover::after,
+.gallery-card:hover::after,
+.language-card:hover::after,
+.contact-card:hover::after {
+    opacity: 1;
+}
+
+/* Cute selection style */
+::selection {
+    background: rgba(255, 158, 181, 0.4);
+    color: var(--primary-dark);
+}
+
+/* Scrollbar styling - Thai cute theme */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--thai-pink), var(--thai-mint));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--primary), var(--secondary));
 }
